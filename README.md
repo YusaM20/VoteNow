@@ -24,7 +24,6 @@
 
 ## Komponen Proyek
  <br>
-  <li>Sistem Voting <br>Spesifikasi:</li>
   <ul>
     <li>Peserta</li>
     <li>Kategori</li>
