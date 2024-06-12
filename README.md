@@ -38,6 +38,6 @@
 
 ## Demo Proyek
 <ul>
-  <li>Github: <a href="">Github</a></li>
+  <li>Github: <a href="">[Github](https://github.com/YusaM20/VoteNow)</a></li>
   <li>Youtube: <a href="">Youtube</a></li>
 </ul>
