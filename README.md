@@ -20,7 +20,7 @@
 <p>VoteNow</p>
 
 ## Penjelasan Proyek
-<p>Lorem ipsum sir dolor amet.</p>
+<p>VoteNow adalah sebuah situs dengan bertemakan sebua game online MOBA dimana kita bisa memilih hero favorit berdsarkan role dari hero tersebut</p>
 
 ## Komponen Proyek
  <br>
@@ -34,7 +34,21 @@
   <br>
 
 ## Pembagian Tim
-<p>Lorem ipsum sir dolor amet.</p>
+<p><a href="">Akmal Fauzi Salman</a>.
+<br>
+  <ul>
+    <li>Peserta</li>
+    <li>Kategori</li>
+    <li>Paslon</li>
+  </ul>
+  <br></p>
+  <p><a href="">Aulia Wira Yudha Mustopa</a>.
+<br>
+  <ul>
+     <li>Vote</li>
+    <li>Riwayat Vote</li>
+  </ul>
+  <br></p>
 
 ## Demo Proyek
 <ul>
