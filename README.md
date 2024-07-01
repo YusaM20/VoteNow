@@ -11,8 +11,8 @@
   <li>Proyek: {UAS-laravel}</li>
   <li>Anggota:</li>
   <ul>
-    <li>Anggota 1: <a href="">Akmal Fauzi Salman</a></li>
-    <li>Anggota 2: <a href="">Aulia Wira Yudha Mustopa</a></li>
+    <li>Anggota 1: <a href="https://github.com/akmalfman">Akmal Fauzi Salman</a></li>
+    <li>Anggota 2: <a href="https://github.com/YusaM20">Aulia Wira Yudha Mustopa</a></li>
   </ul>
 </ul>
 
@@ -34,7 +34,7 @@
   <br>
 
 ## Pembagian Tim
-<p><a href="">Akmal Fauzi Salman</a>.
+<p><a href="https://github.com/akmalfman">Akmal Fauzi Salman</a>.
 <br>
   <ul>
     <li>Peserta</li>
@@ -42,7 +42,7 @@
     <li>Paslon</li>
   </ul>
   <br></p>
-  <p><a href="">Aulia Wira Yudha Mustopa</a>.
+  <p><a href="https://github.com/YusaM20">Aulia Wira Yudha Mustopa</a>
 <br>
   <ul>
      <li>Vote</li>
