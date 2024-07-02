@@ -37,16 +37,16 @@
 <p><a href="https://github.com/akmalfman">Akmal Fauzi Salman</a>.
 <br>
   <ul>
-    <li>Peserta</li>
-    <li>Kategori</li>
-    <li>Paslon</li>
+    <li>Peserta(onProgress)</li>
+    <li>Kategori(onProgress)</li>
+    <li>Paslon(onProgress)</li>
   </ul>
   <br></p>
   <p><a href="https://github.com/YusaM20">Aulia Wira Yudha Mustopa</a>
 <br>
   <ul>
-     <li>Vote</li>
-    <li>Riwayat Vote</li>
+     <li>Vote(onProgress)</li>
+    <li>Riwayat Vote(onProgress)</li>
   </ul>
   <br></p>
 
