@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,8 @@ Route::prefix('user')->group(function () {
     Route::get('/login', [UserController::class, 'login'])->name('login');
     Route::post('/login/auth', [UserController::class, 'loginAuth']);
     Route::post('/logout', [UserController::class, 'logout']);
+});
+
+Route::prefix('dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index']);
 });
