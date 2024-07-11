@@ -6,6 +6,7 @@
     <form method="POST" action="/user/register/store">
         @csrf
 
+        <img src="../aset/images/logos/votenow-logo.png" alt="" class="img-fluid mx-auto d-block">
         <h1 class="h3 mb-3 fw-normal">Register</h1>
         <div class="form-floating">
             <input type="text" class="form-control mb-3" name='name' placeholder="Nama">

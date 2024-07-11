@@ -35,11 +35,18 @@
                                 @endif
                                 </p>
                             </a>
-                            <a href="/user/logout"
+                            <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                                 class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
 
-                            <form id="logout-form" action="/user/logout" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            {{-- <a href="/user/logout"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+
+                            <form id="logout-form" action="/user/logout" method="POST" style="display: none;"> --}}
                         </div>
                     </div>
                 </li>

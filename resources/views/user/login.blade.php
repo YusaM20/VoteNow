@@ -11,6 +11,7 @@
     <form method="POST" action="/user/login/auth">
         @csrf
 
+        <img src="../aset/images/logos/votenow-logo.png" alt="" class="img-fluid mx-auto d-block">
         <h1 class="h3 mb-3 fw-normal">Login</h1>
         <div class="form-floating">
             <input type="email" class="form-control mb-3" name='email' placeholder="name@example.com">
@@ -21,6 +22,6 @@
             <label for="floatingPassword">Password</label>
         </div>
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
     </form>
 @endsection
