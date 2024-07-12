@@ -16,7 +16,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.main.home');
 });
 
 Route::prefix('user')->group(function () {

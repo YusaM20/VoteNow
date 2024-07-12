@@ -1,3 +1,9 @@
-<div class="py-6 px-6 text-center">
-    <p class="mb-0 fs-4">Todo APP - Web 2</p>
-</div>
+<footer>
+    <div class="container">
+      <div class="col-lg-8">
+        <p>Copyright © 2024 VoteNow.</p>
+
+      </div>
+    </div>
+  </footer>
+
