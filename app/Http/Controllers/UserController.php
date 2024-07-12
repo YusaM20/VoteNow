@@ -37,7 +37,7 @@ class UserController extends Controller
             // Buat session atau token autentikasi
             Auth::login($user);
             // dd($user, "Berhasil Login");
-            return redirect('/');
+            return redirect('dashboard');
         }
 
         // dd($user, "Gagal Login");
@@ -71,6 +71,43 @@ class UserController extends Controller
     public function logout()
     {
         Auth::logout();
-        return view('user.login');
+        return redirect('/user/login')->with('success', 'Logged out successfully!');
+    }
+
+    // Fungsi untuk menampilkan semua user
+    public function index()
+    {
+        $users = User::all();
+        return view('user.index', compact('users'));
+    }
+
+    // Fungsi untuk menampilkan form edit user
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+        return view('user.edit', compact('user'));
+    }
+
+    // Fungsi untuk mengupdate data user
+    public function update(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if ($request->password) {
+            $user->password = bcrypt($request->password);
+        }
+        $user->save();
+
+        return redirect('user');
+    }
+
+    // Fungsi untuk menghapus user
+    public function destroy($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect('user');
     }
 }
