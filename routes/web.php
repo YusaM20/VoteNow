@@ -16,8 +16,10 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('layouts.main.home');
+    return view('layouts.main.voting');
 });
+Route::get('/big-deals')->name('bigDeals');
+
 
 Route::prefix('user')->group(function () {
     Route::get('/register', [UserController::class, 'register']);
