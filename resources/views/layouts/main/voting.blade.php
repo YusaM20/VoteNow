@@ -71,7 +71,7 @@ https://templatemo.com/tm-591-villa-agency
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="#" id="homeNav">Home</a></li>
+              <li><a href="{{ route('home') }}" id="homeNav">Home</a></li>
               <li><a href="#" id="kategoriNav">Kategori</a></li>
               <li><a href="property-details.html">Vote</a></li>
               <li><a href="contact.html">Riwayat Vote</a></li>
@@ -122,11 +122,10 @@ https://templatemo.com/tm-591-villa-agency
             <span class="category">Assassin </span>
             <h4><a href="property-details.html">Gusion</a></h4>
             <ul>
-              <li>Bedrooms: <span>8</span></li>
-              <li>Bathrooms: <span>8</span></li>
-              <li>Area: <span>545m2</span></li>
-              <li>Floor: <span>3</span></li>
-              <li>Parking: <span>6 spots</span></li>
+              <li>Lane: <span>Jungler/Mid Lane</span></li>
+              <li>tipe: <span>Burst Damage</span></li>
+              <li>atk tipe: <span>magic/Melee</span></li>
+
             </ul>
             <div class="main-button">
               <a href="#">Vote</a>
@@ -139,11 +138,10 @@ https://templatemo.com/tm-591-villa-agency
             <span class="category">Mage</span>
             <h4><a href="property-details.html">Kagura</a></h4>
             <ul>
-              <li>Bedrooms: <span>6</span></li>
-              <li>Bathrooms: <span>5</span></li>
-              <li>Area: <span>450m2</span></li>
-              <li>Floor: <span>3</span></li>
-              <li>Parking: <span>8 spots</span></li>
+              <li>Lane: <span> Mid lane</span></li>
+              <li>tipe: <span>Damage reap</span></li>
+              <li>atk tipe: <span>Magic/range</span></li>
+
             </ul>
             <div class="main-button">
                 <a href="#">Vote</a>
@@ -156,11 +154,10 @@ https://templatemo.com/tm-591-villa-agency
             <span class="category">Fighter</span>
             <h4><a href="property-details.html">Yu Zhong</a></h4>
             <ul>
-              <li>Bedrooms: <span>5</span></li>
-              <li>Bathrooms: <span>4</span></li>
-              <li>Area: <span>225m2</span></li>
-              <li>Floor: <span>3</span></li>
-              <li>Parking: <span>10 spots</span></li>
+              <li>Lane: <span>Exp Lane</span></li>
+              <li>tipe: <span>Initiator/regen</span></li>
+              <li>atk tipe: <span>physical/melee</span></li>
+
             </ul>
             <div class="main-button">
                 <a href="#">Vote</a>
@@ -173,11 +170,10 @@ https://templatemo.com/tm-591-villa-agency
             <span class="category">Mage</span>
             <h4><a href="property-details.html">Lunox</a></h4>
             <ul>
-              <li>Bedrooms: <span>4</span></li>
-              <li>Bathrooms: <span>3</span></li>
-              <li>Area: <span>125m2</span></li>
-              <li>Floor: <span>25th</span></li>
-              <li>Parking: <span>2 cars</span></li>
+              <li>Lane: <span>Mid Lane</span></li>
+              <li>tipe: <span>Damage reap/poke</span></li>
+              <li>atk tipe: <span>Magic/range</span></li>
+
             </ul>
             <div class="main-button">
                 <a href="#">Vote</a>
@@ -190,11 +186,10 @@ https://templatemo.com/tm-591-villa-agency
             <span class="category">Mage</span>
             <h4><a href="property-details.html">Pharsa</a></h4>
             <ul>
-              <li>Bedrooms: <span>4</span></li>
-              <li>Bathrooms: <span>4</span></li>
-              <li>Area: <span>180m2</span></li>
-              <li>Floor: <span>38th</span></li>
-              <li>Parking: <span>2 cars</span></li>
+              <li>Lane: <span>Mid Lane</span></li>
+              <li>tipe: <span>Burst Damage/Poke</span></li>
+              <li>atk tipe: <span>Magic/Range</span></li>
+
             </ul>
             <div class="main-button">
                 <a href="#">Vote</a>
@@ -207,11 +202,10 @@ https://templatemo.com/tm-591-villa-agency
             <span class="category">Assassin</span>
             <h4><a href="property-details.html">Lancelot</a></h4>
             <ul>
-              <li>Bedrooms: <span>3</span></li>
-              <li>Bathrooms: <span>2</span></li>
-              <li>Area: <span>165m2</span></li>
-              <li>Floor: <span>26th</span></li>
-              <li>Parking: <span>3 cars</span></li>
+              <li>Lane: <span>Jungler</span></li>
+              <li>tipe: <span>Burst Damage</span></li>
+              <li>atk tipe: <span>Physical/Melee</span></li>
+
             </ul>
             <div class="main-button">
                 <a href="#">Vote</a>
@@ -224,11 +218,10 @@ https://templatemo.com/tm-591-villa-agency
             <span class="category">Mage</span>
             <h4><a href="property-details.html">Yve</a></h4>
             <ul>
-              <li>Bedrooms: <span>8</span></li>
-              <li>Bathrooms: <span>8</span></li>
-              <li>Area: <span>550m2</span></li>
-              <li>Floor: <span>3</span></li>
-              <li>Parking: <span>12 spots</span></li>
+              <li>Lane: <span>Mid Lane</span></li>
+              <li>tipe: <span>Poke</span></li>
+              <li>atk tipe: <span>Magic/Range</span></li>
+
             </ul>
             <div class="main-button">
                 <a href="#">Vote</a>
@@ -241,11 +234,10 @@ https://templatemo.com/tm-591-villa-agency
             <span class="category">Assassin</span>
             <h4><a href="property-details.html">Ling</a></h4>
             <ul>
-              <li>Bedrooms: <span>12</span></li>
-              <li>Bathrooms: <span>15</span></li>
-              <li>Area: <span>380m2</span></li>
-              <li>Floor: <span>3</span></li>
-              <li>Parking: <span>14 spots</span></li>
+              <li>Lane: <span>Jungler</span></li>
+              <li>tipe: <span>Burst Damage</span></li>
+              <li>atk tipe: <span>Physical/Melee</span></li>
+
             </ul>
             <div class="main-button">
                 <a href="#">Vote</a>
@@ -258,34 +250,34 @@ https://templatemo.com/tm-591-villa-agency
               <span class="category">Assassin</span>
               <h4><a href="property-details.html">Fanny</a></h4>
               <ul>
-                <li>Bedrooms: <span>8</span></li>
-                <li>Bathrooms: <span>8</span></li>
-                <li>Area: <span>550m2</span></li>
-                <li>Floor: <span>3</span></li>
-                <li>Parking: <span>12 spots</span></li>
+                <li>Lane: <span>Jungler</span></li>
+                <li>tipe: <span>Burst Damage</span></li>
+                <li>atk tipe: <span>Physical/Melee</span></li>
+
               </ul>
               <div class="main-button">
                 <a href="#">Vote</a>
               </div>
             </div>
           </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6  rac">
+          <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6  rac">
             <div class="item">
-              <a href="property-details.html"><img src="assets/images/property-12.png" alt=""></a>
-              <span class="category">Fighter</span>
-              <h4><a href="property-details.html">Dyrroth</a></h4>
-              <ul>
-                <li>Bedrooms: <span>10</span></li>
-                <li>Bathrooms: <span>12</span></li>
-                <li>Area: <span>860m2</span></li>
-                <li>Floor: <span>3</span></li>
-                <li>Parking: <span>10 spots</span></li>
-              </ul>
-              <div class="main-button">
-                <a href="#">Vote</a>
-              </div>
+                <a href="property-details.html"><img src="{{ asset('assets/images/property-12.png') }}" alt=""></a>
+                <span class="category">Fighter</span>
+                <h4><a href="property-details.html">Dyrroth</a></h4>
+                <ul>
+                    <li>Lane: <span>Exp Lane/Jungler</span></li>
+                    <li>Type: <span>Damage reap/regen</span></li>
+                    <li>Attack Type: <span>Physical/Melee</span></li>
+                </ul>
+                <div class="main-button">
+                    <form action="{{ route('vote.character', ['character' => 'Dyrroth']) }}" method="POST" onsubmit="return confirmVote()">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Vote</button>
+                    </form>
+                </div>
             </div>
-          </div>
+        </div>
       </div>
 
     </div>
@@ -307,6 +299,11 @@ https://templatemo.com/tm-591-villa-agency
   <script src="{{asset('assets/js/owl-carousel.js')}}"></script>
   <script src="{{asset('assets/js/counter.js')}}"></script>
   <script src="{{asset('assets/js/custom.js')}}"></script>
+  <script>
+    function confirmVote() {
+        return confirm('Apakah Anda akan memilih hero ini?');
+    }
+</script>
 
   </body>
 </html>

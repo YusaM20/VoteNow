@@ -60,7 +60,7 @@
             <ul class="nav">
               <li><a href="#" id="homeNav">Home</a></li>
               <li><a href="#" id="kategoriNav">Kategori</a></li>
-              <li><a href="property-details.html">Vote</a></li>
+              <li><a href="{{ route('vote.page') }}">Vote</a></li>
               <li><a href="contact.html">Riwayat Vote</a></li>
               <li><a href="#"><i class="fa fa-calendar"></i> Profile</a></li>
             </ul>
