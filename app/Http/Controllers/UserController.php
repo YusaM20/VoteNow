@@ -22,27 +22,26 @@ class UserController extends Controller
 
     public function loginAuth(Request $request)
     {
-        //validasi input
         $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string'
         ]);
 
-        // Coba dapatkan pengguna berdasarkan email
         $user = User::where('email', $request->email)->first();
 
-        // dd($user);
-        // Jika pengguna ditemukan dan password cocok
         if ($user && Hash::check($request->password, $user->password)) {
-            // Buat session atau token autentikasi
-            Auth::login($user);
-            // dd($user, "Berhasil Login");
-            return redirect('dashboard');
+            Auth::login($user); // Pindahkan ini sebelum redirect
+
+            if ($user->group == 'admin') {
+                return redirect('/dashboard');
+            } else {
+                return redirect('/'); // Redirect ke halaman user
+            }
         }
 
-        // dd($user, "Gagal Login");
         return redirect('user/login');
     }
+
 
     public function register()
     {

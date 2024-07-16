@@ -34,6 +34,6 @@ Route::prefix('user')->group(function () {
     Route::delete('/delete/{id}', [UserController::class, 'destroy']);
 });
 
-Route::prefix('dashboard')->group(function () {
-    Route::get('/', [DashboardController::class, 'index']);
+Route::prefix('dashboard')->middleware(['auth', 'checkAdmin'])->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 });
