@@ -38,26 +38,14 @@
                 </li>
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Kategori Voting</span>
+                    <span class="hide-menu">Hero</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="/todocategory" aria-expanded="false">
+                    <a class="sidebar-link" href="/hero" aria-expanded="false">
                         <span>
                             <i class="ti ti-article"></i>
                         </span>
-                        <span class="hide-menu">Kategori Voting</span>
-                    </a>
-                </li>
-                <li class="nav-small-cap">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Voting</span>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="/todo" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-article"></i>
-                        </span>
-                        <span class="hide-menu">Voting</span>
+                        <span class="hide-menu">List Hero</span>
                     </a>
                 </li>
             </ul>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HeroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,6 @@ Route::prefix('user')->group(function () {
     Route::get('/login', [UserController::class, 'login'])->name('login');
     Route::post('/login/auth', [UserController::class, 'loginAuth']);
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-    // Route::post('/logout', [UserController::class, 'logout']);
 
     // Route untuk read, update, dan delete
     Route::get('/', [UserController::class, 'index']);
@@ -36,4 +36,15 @@ Route::prefix('user')->group(function () {
 
 Route::prefix('dashboard')->middleware(['auth', 'checkAdmin'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('hero')->group(function () {
+        Route::get('/', [HeroController::class, 'index']);
+        Route::get('/create', [HeroController::class, 'create']);
+        Route::get('/edit/{id}', [HeroController::class, 'edit']);
+        Route::delete('/delete/{id}', [HeroController::class, 'destroy']);
+        Route::post('/store', [HeroController::class, 'store']);
+        Route::post('/update/{id}', [HeroController::class, 'update']);
+    });
 });

@@ -11,16 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('heros', function (Blueprint $table) {
+        Schema::create('hero_roles', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('hero_role_id')->unsigned();
-            $table->string('name');
-            $table->string('specially');
-            $table->string('lane');
-            $table->string('type');
+            $table->string('role');
             $table->timestamps();
-
-            $table->foreign('hero_role_id')->references('id')->on('hero_roles')->onDelete('cascade');
         });
     }
 

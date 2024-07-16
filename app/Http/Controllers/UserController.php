@@ -33,12 +33,14 @@ class UserController extends Controller
             Auth::login($user); // Pindahkan ini sebelum redirect
 
             if ($user->group == 'admin') {
+                // dd("kamu admin");
                 return redirect('/dashboard');
             } else {
+                // dd("kamu user");
                 return redirect('/'); // Redirect ke halaman user
             }
         }
-
+        // dd("aneh", $user);
         return redirect('user/login');
     }
 
