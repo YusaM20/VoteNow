@@ -11,5 +11,5 @@ class Hero extends Model
 
     protected $table = 'heros';
     protected $primaryKey = 'id';
-    protected $fillable = ['hero_role_id', 'name', 'specially', 'lane', 'type'];
+    protected $fillable = ['hero_role_id', 'name', 'specially', 'lane', 'type', 'image'];
 }

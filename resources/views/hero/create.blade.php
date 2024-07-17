@@ -3,7 +3,7 @@
 @section('title', 'Tambah Hero')
 
 @section('content')
-    <form method="POST" action="/hero/store">
+    <form method="POST" action="/hero/store" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="role" class="form-label">Role</label>
@@ -29,6 +29,10 @@
         <div class="mb-3">
             <label for="type" class="form-label">Type</label>
             <input type="text" class="form-control" id="type" name="type">
+        </div>
+        <div class="mb-3">
+            <label>Upload File/Image</label>
+            <input type="file" class="form-control" id="image" name="image">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Models\Hero;
 use App\Models\HeroRole;
 
@@ -23,6 +24,7 @@ class HeroController extends Controller
                 'heros.specially',
                 'heros.lane',
                 'heros.type',
+                'heros.image',
             )
             ->get();
         return view('hero.hero', compact('heros'));
@@ -42,12 +44,28 @@ class HeroController extends Controller
     {
         // dd($request->all());
 
+        $request->validate([
+            'image' => 'nullable|mimes:png,jpg,jpeg'
+        ]);
+
+        if ($request->has('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+
+            $filename = time() . '.' . $extension;
+
+            $path = 'uploads/hero/';
+            $file->move($path, $filename);
+        }
+
         $value = [
             'hero_role_id' => $request->hero_role_id,
             'name' => $request->name,
             'specially' => $request->specially,
             'lane' => $request->lane,
             'type' => $request->type,
+            'image' => $path . $filename,
+
         ];
 
         Hero::create($value);
@@ -79,15 +97,35 @@ class HeroController extends Controller
     public function update(Request $request, $id)
     {
 
+        $request->validate([
+            'image' => 'nullable|mimes:png,jpg,jpeg'
+        ]);
+
+        $updatehero = Hero::where('id', $id)->first();
+        if ($request->has('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+
+            $filename = time() . '.' . $extension;
+
+            $path = 'uploads/hero/';
+            $file->move($path, $filename);
+
+            if (File::exists($updatehero->image)) {
+                File::delete($updatehero->image);
+            }
+        }
+
         $value = [
             'hero_role_id' => $request->hero_role_id,
             'name' => $request->name,
             'specially' => $request->specially,
             'lane' => $request->lane,
             'type' => $request->type,
+            'image' => isset($filename) ? $path . $filename : $updatehero->image,
         ];
 
-        Hero::where('id', $id)->update($value);
+        $updatehero->update($value);
         return redirect('hero');
     }
 
@@ -96,8 +134,10 @@ class HeroController extends Controller
     //  */
     public function destroy(string $id)
     {
-        $hero = Hero::find($id);
-
+        $hero = Hero::find($id)->first();
+        if (File::exists($hero->image)) {
+            File::delete($hero->image);
+        }
         $hero->delete();
         return redirect('hero');
     }

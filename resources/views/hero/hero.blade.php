@@ -14,6 +14,7 @@
                 <th>Specially</th>
                 <th>Lane</th>
                 <th>Type</th>
+                <th>Image</th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +26,11 @@
                     <td>{{ $value->lane }}</td>
                     <td>{{ $value->type }}</td>
                     <td>
-                        <a href="{{ url('/hero/edit/' . $value->id) }}" class="btn btn-primary">Edit</a>
-                        <form action="{{ url('/hero/delete/' . $value->id) }}" method="POST" style="display:inline;">
+                        <img src="{{ asset($value->image) }}" style="width:70px; height:70px;" alt="Img" />
+                    </td>
+                    <td>
+                        <a href="{{ url('/hero/edit/' . $value->hero_id) }}" class="btn btn-primary">Edit</a>
+                        <form action="{{ url('/hero/delete/' . $value->hero_id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>
