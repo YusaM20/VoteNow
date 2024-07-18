@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\VoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,13 @@ use App\Http\Controllers\HeroController;
 
 Route::get('/', function () {
     return view('layouts.main.home');
-});
+})->name('home');
+// Route::get('/big-deals')->name('bigDeals');
+Route::get('/vote', [VoteController::class, 'showVotePage'])->name('vote.page');
+Route::post('/vote/{character}', [VoteController::class, 'voteForCharacter'])->name('vote.character');
+
+
+
 
 Route::prefix('user')->group(function () {
     Route::get('/register', [UserController::class, 'register']);
