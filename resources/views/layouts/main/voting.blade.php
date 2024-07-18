@@ -74,7 +74,7 @@ https://templatemo.com/tm-591-villa-agency
               <li><a href="{{ route('home') }}" id="homeNav">Home</a></li>
               <li><a href="#" id="kategoriNav">Kategori</a></li>
               <li><a href="property-details.html">Vote</a></li>
-              <li><a href="contact.html">Riwayat Vote</a></li>
+              <li><a href="{{ route('lead.page') }}">Leaderboard</a></li>
               <li><a href="#"><i class="fa fa-calendar"></i> Profile</a></li>
             </ul>
             <a class='menu-trigger'>
