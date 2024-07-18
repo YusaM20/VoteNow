@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Models\Hero;
 use App\Models\HeroRole;
+use App\Models\Vote;
 
 class VoteController extends Controller
 {
@@ -25,7 +26,7 @@ class VoteController extends Controller
                 'heros.image',
             )
             ->get();
-            // return view('hero.hero', compact('heros'));
+        // return view('hero.hero', compact('heros'));
 
         return view('layouts.main.voting', compact('heros')); // make sure you have a view named 'vote.blade.php'
     }
@@ -34,5 +35,17 @@ class VoteController extends Controller
         // Handle the voting logic here
         // $character contains the character being voted for
         return redirect()->back()->with('message', 'Thank you for voting!');
+    }
+
+    public function storeVote(Request $request)
+    {
+        $value = [
+            'hero_id' => $request->hero_id,
+        ];
+
+        // dd($value);
+
+        Vote::create($value);
+        return redirect()->back()->with('success', 'Vote has been recorded.');
     }
 }
