@@ -129,7 +129,7 @@ https://templatemo.com/tm-591-villa-agency
 
                 </ul>
                 <div class="main-button">
-                  <a href="#">Vote</a>
+                  <a href="#">Votee</a>
                 </div>
               </div>
         </div>
