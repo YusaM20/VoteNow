@@ -21,9 +21,14 @@ use App\Http\Controllers\VoteController;
 Route::get('/', function () {
     return view('layouts.main.home');
 })->name('home');
-// Route::get('/big-deals')->name('bigDeals');
-Route::get('/vote', [VoteController::class, 'showVotePage'])->name('vote.page');
-Route::post('/vote/{character}', [VoteController::class, 'voteForCharacter'])->name('vote.character');
+
+
+Route::prefix('vote')->group(function() {
+    Route::get('/', [VoteController::class, 'showVotePage'])->name('vote.page');
+    Route::post('/vote/{character}', [VoteController::class, 'voteForCharacter'])->name('vote.character');
+
+
+});
 
 
 

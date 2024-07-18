@@ -115,23 +115,44 @@ https://templatemo.com/tm-591-villa-agency
           <a href="#!" data-filter=".rac">Fighter</a>
         </li>
       </ul>
+      @foreach ( $heros as $value )
       <div class="row properties-box">
         <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
-          <div class="item">
-            <a href="property-details.html"><img src="assets/images/property-01.jpg" alt=""></a>
-            <span class="category">Assassin </span>
-            <h4><a href="property-details.html">Gusion</a></h4>
-            <ul>
-              <li>Lane: <span>Jungler/Mid Lane</span></li>
-              <li>tipe: <span>Burst Damage</span></li>
-              <li>atk tipe: <span>magic/Melee</span></li>
+            <div class="item">
+                <a href="#"><img src="{{ asset($value->image) }}" alt=""></a>
+                <span class="category">{{ $value->role }}</span>
+                <h4><a href="property-details.html">{{ $value->name }}</a></h4>
+                <ul>
+                  <li>Lane: <span>{{ $value->lane }}</span></li>
+                  <li>tipe: <span>{{ $value->specially }}</span></li>
+                  <li>atk tipe: <span>{{ $value->type }}</span></li>
 
-            </ul>
-            <div class="main-button">
-              <a href="#">Vote</a>
-            </div>
-          </div>
+                </ul>
+                <div class="main-button">
+                  <a href="#">Vote</a>
+                </div>
+              </div>
         </div>
+
+      @endforeach
+      {{-- <div class="row properties-box">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
+            <div class="item">
+                <a href="property-details.html"><img src="assets/images/property-04.jpg" alt=""></a>
+                <span class="category">Assassin</span>
+                <h4><a href="property-details.html">Fanny</a></h4>
+                <ul>
+                  <li>Lane: <span>Jungler</span></li>
+                  <li>tipe: <span>Burst Damage</span></li>
+                  <li>atk tipe: <span>Physical/Melee</span></li>
+
+                </ul>
+                <div class="main-button">
+                  <a href="#">Vote</a>
+                </div>
+              </div>
+        </div> --}}
+{{--
         <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 str">
           <div class="item">
             <a href="property-details.html"><img src="assets/images/property-05.jpg" alt=""></a>
@@ -244,13 +265,13 @@ https://templatemo.com/tm-591-villa-agency
               </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 rac">
             <div class="item">
-              <a href="property-details.html"><img src="assets/images/property-04.jpg" alt=""></a>
-              <span class="category">Assassin</span>
-              <h4><a href="property-details.html">Fanny</a></h4>
+              <a href="property-details.html"><img src="assets/images/property-14.jpg" alt=""></a>
+              <span class="category">Fighter</span>
+              <h4><a href="property-details.html">Zilong</a></h4>
               <ul>
-                <li>Lane: <span>Jungler</span></li>
+                <li>Lane: <span>Jungler/Exp Lane</span></li>
                 <li>tipe: <span>Burst Damage</span></li>
                 <li>atk tipe: <span>Physical/Melee</span></li>
 
@@ -260,16 +281,17 @@ https://templatemo.com/tm-591-villa-agency
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6  rac">
+          <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 rac">
             <div class="item">
-                <a href="property-details.html"><img src="{{ asset('assets/images/property-12.png') }}" alt=""></a>
-                <span class="category">Fighter</span>
-                <h4><a href="property-details.html">Dyrroth</a></h4>
-                <ul>
-                    <li>Lane: <span>Exp Lane/Jungler</span></li>
-                    <li>Type: <span>Damage reap/regen</span></li>
-                    <li>Attack Type: <span>Physical/Melee</span></li>
-                </ul>
+              <a href="property-details.html"><img src="assets/images/property-12.png" alt=""></a>
+              <span class="category">Fighter</span>
+              <h4><a href="property-details.html">Dyrroth</a></h4>
+              <ul>
+                <li>Lane: <span>Jungler/Exp Lane</span></li>
+                <li>tipe: <span>Burst Damage</span></li>
+                <li>atk tipe: <span>Physical/Melee</span></li>
+
+              </ul>
                 <div class="main-button">
                     <form action="{{ route('vote.character', ['character' => 'Dyrroth']) }}" method="POST" onsubmit="return confirmVote()">
                         @csrf
@@ -280,7 +302,7 @@ https://templatemo.com/tm-591-villa-agency
         </div>
       </div>
 
-    </div>
+    </div> --}}
   </div>
 
   <footer>
