@@ -76,7 +76,7 @@ https://templatemo.com/tm-591-villa-agency
                             <li><a href="{{ route('home') }}" id="homeNav">Home</a></li>
                             <li><a href="#" id="kategoriNav">Kategori</a></li>
                             <li><a href="property-details.html">Vote</a></li>
-                            <li><a href="contact.html">Riwayat Vote</a></li>
+                            <li><a href="{{ route('lead.page') }}">Leaderboard</a></li>
                             <li><a href="#"><i class="fa fa-calendar"></i> Profile</a></li>
                         </ul>
                         <a class='menu-trigger'>
@@ -140,7 +140,6 @@ https://templatemo.com/tm-591-villa-agency
                                 <li>Lane: <span>{{ $value->lane }}</span></li>
                                 <li>tipe: <span>{{ $value->specially }}</span></li>
                                 <li>atk tipe: <span>{{ $value->type }}</span></li>
-
                             </ul>
                             <div class="main-button">
                                 <form action="/vote/store/{{ $value->id }}" method="POST">
