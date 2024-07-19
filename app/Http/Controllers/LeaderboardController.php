@@ -16,7 +16,7 @@ class LeaderboardController extends Controller
     {
         $votes = Hero::join('votes', 'votes.hero_id', '=', 'heros.id')
             ->join('hero_roles', 'heros.hero_role_id', '=', 'hero_roles.id')
-            ->select('heros.*', 'hero_roles.role as hero_role_name', \DB::raw('SUM(votes.points) as total_points'))
+            ->select('heros.*', 'hero_roles.role as hero_role_name', DB::raw('COUNT(votes.hero_id) as total_points'))
             ->groupBy('heros.id', 'hero_roles.role')
             ->orderBy('total_points', 'desc')
             ->get();
@@ -24,5 +24,3 @@ class LeaderboardController extends Controller
         return view('layouts.main.leaderboard', compact('votes'));
     }
 }
-
-

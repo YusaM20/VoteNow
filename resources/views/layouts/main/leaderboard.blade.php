@@ -5,7 +5,8 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <title>VoteNow</title>
 
@@ -15,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/templatemo-villa-agency.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -83,7 +84,7 @@
                                         <h6 class="fw-semibold mb-0">Rank</h6>
                                     </th>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Category</h6>
+                                        <h6 class="fw-semibold mb-0">Role</h6>
                                     </th>
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Name</h6>
@@ -97,18 +98,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($votes as $vote)
-                                <tr>
-                                    <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{ $loop->iteration }}</h6></td>
-                                    <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{ $vote->hero_role_name }}</h6></td> <!-- Adjust this if needed -->
-                                    <td class="border-bottom-0"><p class="mb-0 fw-normal">{{ $vote->name }}</p></td>
-                                    <td class="border-bottom-0">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <span class="badge bg-primary rounded-3 fw-semibold">{{ $vote->lane }}</span>
-                                        </div>
-                                    </td>
-                                    <td class="border-bottom-0"><h6 class="fw-semibold mb-0 fs-4">{{ $vote->total_points }}</h6></td>
-                                </tr>
+                                @foreach ($votes as $vote)
+                                    <tr>
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">{{ $loop->iteration }}</h6>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">{{ $vote->hero_role_name }}</h6>
+                                        </td> <!-- Adjust this if needed -->
+                                        <td class="border-bottom-0">
+                                            <p class="mb-0 fw-normal">{{ $vote->name }}</p>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span
+                                                    class="badge bg-primary rounded-3 fw-semibold">{{ $vote->lane }}</span>
+                                            </div>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0 fs-4">{{ $vote->total_points }}</h6>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -143,4 +153,5 @@
     <script src="{{ asset('aset/libs/simplebar/dist/simplebar.js') }}"></script>
     <script src="{{ asset('aset/js/dashboard.js') }}"></script>
 </body>
+
 </html>
