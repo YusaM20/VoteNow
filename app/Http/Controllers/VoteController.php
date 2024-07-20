@@ -72,4 +72,16 @@ class VoteController extends Controller
 
         return view('layouts.main.leaderboard', ['votes' => $votes]);
     }
+
+    public function storeVote(Request $request)
+    {
+        $value = [
+            'hero_id' => $request->hero_id,
+        ];
+
+        // dd($value);
+
+        Vote::create($value);
+        return redirect('leaderboard')->with('success', 'Vote has been recorded.');
+    }
 }

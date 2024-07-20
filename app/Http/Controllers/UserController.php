@@ -17,6 +17,14 @@ class UserController extends Controller
 
     public function login()
     {
+        if (Auth::check()) {
+            if (Auth::user()->group === 'admin') {
+                return redirect('/dashboard');
+            }
+
+            return redirect('/');
+        }
+
         return view('user.login');
     }
 
@@ -47,6 +55,13 @@ class UserController extends Controller
 
     public function register()
     {
+        if (Auth::check()) {
+            if (Auth::user()->group === 'admin') {
+                return redirect('/dashboard');
+            }
+
+            return redirect('/');
+        }
         return view('user.register');
     }
 

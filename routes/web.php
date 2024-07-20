@@ -33,6 +33,8 @@ Route::prefix('leaderboard')->group(function () {
 Route::prefix('vote')->group(function () {
     Route::get('/', [VoteController::class, 'showVotePage'])->name('vote.page');
     Route::post('/vote/{character}', [VoteController::class, 'voteForCharacter'])->name('vote.character');
+    // Route::post('/vote/{character}', [VoteController::class, 'voteForCharacter'])->name('vote.character');
+    Route::post('/store/{id}', [VoteController::class, 'storeVote']);
 });
 
 

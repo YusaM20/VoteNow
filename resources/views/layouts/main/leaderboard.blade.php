@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -152,6 +153,19 @@
     <script src="{{ asset('aset/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
     <script src="{{ asset('aset/libs/simplebar/dist/simplebar.js') }}"></script>
     <script src="{{ asset('aset/js/dashboard.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: 'Success!',
+                    text: '{{ session('success') }}',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            });
+        </script>
+    @endif
 </body>
 
 </html>

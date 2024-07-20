@@ -142,9 +142,9 @@ https://templatemo.com/tm-591-villa-agency
                                 <li>atk tipe: <span>{{ $value->type }}</span></li>
                             </ul>
                             <div class="main-button">
-                                <form action="/vote/store/{{ $value->id }}" method="POST">
+                                <form action="/vote/store/{{ $value->hero_id }}" method="POST">
                                     @csrf
-                                    <input type="hidden" name="hero_id" value="{{ $value->id }}">
+                                    <input type="hidden" name="hero_id" value="{{ $value->hero_id }}">
                                     <button class="w-50 btn btn-lg btn-dark" type="submit">Vote</button>
                                 </form>
                             </div>
