@@ -24,18 +24,23 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::prefix('leaderboard')->group(function () {
-    Route::get('/', [LeaderboardController::class, 'showLeadPage'])->name('lead.page');
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('leaderboard')->group(function () {
+        Route::get('/', [LeaderboardController::class, 'showLeadPage'])->name('lead.page');
+    });
 });
 
 
 
-Route::prefix('vote')->group(function () {
-    Route::get('/', [VoteController::class, 'showVotePage'])->name('vote.page');
-    Route::post('/vote/{character}', [VoteController::class, 'voteForCharacter'])->name('vote.character');
-    // Route::post('/vote/{character}', [VoteController::class, 'voteForCharacter'])->name('vote.character');
-    Route::post('/store/{id}', [VoteController::class, 'storeVote']);
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('vote')->group(function () {
+        Route::get('/', [VoteController::class, 'showVotePage'])->name('vote.page');
+        Route::post('/vote/{character}', [VoteController::class, 'voteForCharacter'])->name('vote.character');
+        // Route::post('/vote/{character}', [VoteController::class, 'voteForCharacter'])->name('vote.character');
+        Route::post('/store/{id}', [VoteController::class, 'storeVote']);
+    });
 });
+
 
 
 
