@@ -9,6 +9,7 @@ use App\Models\Hero;
 use App\Models\HeroRole;
 use App\Models\Vote;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class VoteController extends Controller
 {
@@ -87,5 +88,11 @@ class VoteController extends Controller
 
         Vote::create($value);
         return redirect('leaderboard')->with('success', 'Vote has been recorded.');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/user/login')->with('success', 'Logged out successfully!');
     }
 }

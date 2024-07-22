@@ -27,6 +27,7 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
     Route::prefix('leaderboard')->group(function () {
         Route::get('/', [LeaderboardController::class, 'showLeadPage'])->name('lead.page');
+        Route::post('/logout', [UserController::class, 'logout'])->name('logout');
     });
 });
 
@@ -38,6 +39,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/vote/{character}', [VoteController::class, 'voteForCharacter'])->name('vote.character');
         // Route::post('/vote/{character}', [VoteController::class, 'voteForCharacter'])->name('vote.character');
         Route::post('/store/{id}', [VoteController::class, 'storeVote']);
+        Route::post('/logout', [UserController::class, 'logout'])->name('logout');
     });
 });
 

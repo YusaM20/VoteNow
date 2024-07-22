@@ -1,18 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
 
-    <!-- ***** Header Area Start ***** -->
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <title>VoteNow</title>
+
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/templatemo-villa-agency.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.min.css">
+</head>
+
+<body>
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="sub-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8"></div>
+                <div class="col-lg-4 col-md-4">
+                    <ul class="social-links">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://x.com/minthu" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
                             <h1>VoteNow</h1>
                         </a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="#" id="homeNav">Home</a></li>
+                            <li><a href="{{ route('home') }}" id="homeNav">Home</a></li>
                             <li><a href="#" id="kategoriNav">Kategori</a></li>
                             <li><a href="{{ route('vote.page') }}">Vote</a></li>
                             <li><a href="{{ route('lead.page') }}">Leaderboard</a></li>
@@ -21,145 +66,106 @@
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
-                        <!-- ***** Menu End ***** -->
                     </nav>
                 </div>
             </div>
         </div>
     </header>
-    <!-- ***** Header Area End ***** -->
 
-    <div id="carosel" class="main-banner">
-        <div class="owl-carousel owl-banner">
-            <div class="item item-1">
-                <div class="header-text">
-                    <span class="category">Assasin</span>
-                    <h2>ayo<br>Pilih hero mu segera</h2>
-                </div>
-            </div>
-            <div class="item item-2">
-                <div class="header-text">
-                    <span class="category">Mage</span>
-                    <h2>ayo<br>Pilih hero mu segera</h2>
-                </div>
-            </div>
-            <div class="item item-3">
-                <div class="header-text">
-                    <span class="category">Fighter</span>
-                    <h2>ayo<br>Pilih hero mu segera</h2>
+    <div class="container">
+        <div class="col-lg-10 d-flex align-items-stretch">
+            <div class="card w-100">
+                <div class="card-body p-4">
+                    <h5 class="card-title fw-semibold mb-4">LEADERBOARD</h5>
+                    <div class="table-responsive">
+                        <table class="table text-nowrap mb-0 align-middle">
+                            <thead class="text-dark fs-4">
+                                <tr>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Rank</h6>
+                                    </th>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Role</h6>
+                                    </th>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Name</h6>
+                                    </th>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Lane</h6>
+                                    </th>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Points</h6>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($votes as $vote)
+                                    <tr>
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">{{ $loop->iteration }}</h6>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">{{ $vote->hero_role_name }}</h6>
+                                        </td> <!-- Adjust this if needed -->
+                                        <td class="border-bottom-0">
+                                            <p class="mb-0 fw-normal">{{ $vote->name }}</p>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span
+                                                    class="badge bg-primary rounded-3 fw-semibold">{{ $vote->lane }}</span>
+                                            </div>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0 fs-4">{{ $vote->total_points }}</h6>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="best-deal-section" class="section best-deal">
+    <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="section-heading">
-                        <h6>|Pilih Vote</h6>
-                        <h2>Find Your Best Character now!</h2>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="tabs-content">
-                        <div class="row">
-                            <div class="nav-wrapper">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="penthouse-tab" data-bs-toggle="tab"
-                                            data-bs-target="#penthouse" type="button" role="tab"
-                                            aria-controls="penthouse" aria-selected="false">Fighter</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="appartment-tab" data-bs-toggle="tab"
-                                            data-bs-target="#appartment" type="button" role="tab"
-                                            aria-controls="appartment" aria-selected="true">Assassin</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="villa-tab" data-bs-toggle="tab"
-                                            data-bs-target="#villa" type="button" role="tab"
-                                            aria-controls="villa" aria-selected="false">Mage</button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade" id="penthouse" role="tabpanel"
-                                    aria-labelledby="penthouse-tab">
-                                    <div class="row">
-                                        <div class="col-lg-7">
-                                            <img src="assets/images/deal-03.jpg" alt="">
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <h4>Extra Info About Hero</h4>
-                                            <p>Fighter adalah role yang paling populer untuk digunakan oleh para
-                                                pemain karena ada banyak pilihan hero yang bisa digunakan dan hampir
-                                                semua Hero Fighter sangat kuat serta tidak bisa dibilang buruk.
-                                                Fighter juga merupakan hero yang memiliki keseimbangan antara
-                                                ofensif dan defensif.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade show active" id="appartment" role="tabpanel"
-                                    aria-labelledby="appartment-tab">
-                                    <div class="row">
-                                        <div class="col-lg-7">
-                                            <img src="assets/images/deal-01.jpg" alt="">
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <h4>Extra Info About Hero</h4>
-                                            <p>Sesuai dengan namanya assassin merupakan hero spesialis untuk
-                                                membunuh dan mengunci musuh ketika darah mereka sekarat.
-                                                Hero assassin memiliki mobilitas tinggi dan mampu membunuh musuh
-                                                mereka dengan cepat.Sebagai role gesit dengan damage tinggi,
-                                                assassins selalu menjadi target utama lawan.
-                                                Namun, menguasai hero assassin tidak hanya soal memburu kill, tetapi
-                                                juga membawa tim menuju kemenangan.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="villa" role="tabpanel"
-                                    aria-labelledby="villa-tab">
-                                    <div class="row">
-                                        <div class="col-lg-7">
-                                            <img src="assets/images/deal-02.jpg" alt="">
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <h4>Extra Info About Hero</h4>
-                                            <p>Mage adalah sumber damage Magical yang akan mengangkat tim dengan
-                                                damage magicalnya.
-                                                Biasanya ditempatkan di Mid karena dapat melakukan farming dengan
-                                                mudah.
-                                                Tugas seorang Mage juga sebenarnya melakukan rotasi dan membantu
-                                                lane dimana Marksman berada.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-5">
+                    <p>Copyright © 2024 VoteNow. All rights reserved.</p>
                 </div>
             </div>
+        </div>
+    </footer>
 
-
-
-
-            <script>
-                document.getElementById('kategoriNav').addEventListener('click', function(event) {
-                    event.preventDefault();
-                    document.getElementById('best-deal-section').scrollIntoView({
-                        behavior: 'smooth'
-                    });
+    <!-- Scripts -->
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('assets/js/counter.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <script src="{{ asset('aset/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('aset/js/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('aset/libs/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('aset/js/app.min.js') }}"></script>
+    <script src="{{ asset('aset/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('aset/libs/simplebar/dist/simplebar.js') }}"></script>
+    <script src="{{ asset('aset/js/dashboard.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: 'Success!',
+                    text: '{{ session('success') }}',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
                 });
-            </script>
-            <script>
-                document.getElementById('homeNav').addEventListener('click', function(event) {
-                    event.preventDefault();
-                    document.getElementById('carosel').scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            </script>
+            });
+        </script>
+    @endif
+</body>
+
+</html>

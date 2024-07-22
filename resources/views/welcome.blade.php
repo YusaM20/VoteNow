@@ -1,26 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <title>VoteNow</title>
+  <head>
 
-  <!-- Bootstrap core CSS -->
-   <!-- Bootstrap core CSS -->
-   <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    <title>VoteNow</title>
 
-   <!-- Additional CSS Files -->
-   <link rel="stylesheet" href="{{asset('assets/css/fontawesome.css')}}">
-   <link rel="stylesheet" href="{{asset('assets/css/templatemo-villa-agency.css')}}">
-   <link rel="stylesheet" href="{{asset('assets/css/owl.css')}}">
-   <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
-   <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/templatemo-villa-agency.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 <!--
 
+TemplateMo 591 villa agency
+
+https://templatemo.com/tm-591-villa-agency
+
+-->
+  </head>
+
 <body>
+
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
@@ -64,10 +71,10 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="property-details.html">kategori</a></li>
+              <li><a href="{{ route('home') }}" id="homeNav">Home</a></li>
+              <li><a href="#" id="kategoriNav">Kategori</a></li>
               <li><a href="property-details.html">Vote</a></li>
-              <li><a href="contact.html">Riwayat Vote</a></li>
+              <li><a href="{{ route('lead.page') }}">Leaderboard</a></li>
               <li><a href="#"><i class="fa fa-calendar"></i> Profile</a></li>
             </ul>
             <a class='menu-trigger'>
@@ -81,106 +88,221 @@
   </header>
   <!-- ***** Header Area End ***** -->
 
-  <div class="main-banner">
-    <div class="owl-carousel owl-banner">
-      <div class="item item-1">
-        <div class="header-text">
-          <span class="category">Assasin</span>
-          <h2>ayo<br>Pilih hero mu segera</h2>
-        </div>
-      </div>
-      <div class="item item-2">
-        <div class="header-text">
-          <span class="category">Mage</span>
-          <h2>ayo<br>Pilih hero mu segera</h2>
-        </div>
-      </div>
-      <div class="item item-3">
-        <div class="header-text">
-          <span class="category">Fighter</span>
-          <h2>ayo<br>Pilih hero mu segera</h2>
+  <div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <span class="breadcrumb"><a href="#">Home</a> / Vote</span>
+          <h3>Vote now</h3>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="section best-deal">
+  <div class="section properties">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="section-heading">
-            <h6>|Pilih Vote</h6>
-            <h2>Find Your Best Character now!</h2>
+      <ul class="properties-filter">
+        <li>
+          <a class="is_active" href="#!" data-filter="*">Show All</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".adv">Assassin</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".str">Mage</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".rac">Fighter</a>
+        </li>
+      </ul>
+      @foreach ( $heros as $value )
+      <div class="row properties-box">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
+            <div class="item">
+                <a href="#"><img src="{{ asset($value->image) }}" alt=""></a>
+                <span class="category">{{ $value->role }}</span>
+                <h4><a href="property-details.html">{{ $value->name }}</a></h4>
+                <ul>
+                  <li>Lane: <span>{{ $value->lane }}</span></li>
+                  <li>tipe: <span>{{ $value->specially }}</span></li>
+                  <li>atk tipe: <span>{{ $value->type }}</span></li>
+
+                </ul>
+                <div class="main-button">
+                  <a href="#">Votee</a>
+                </div>
+              </div>
+        </div>
+
+      @endforeach
+      {{-- <div class="row properties-box">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
+            <div class="item">
+                <a href="property-details.html"><img src="assets/images/property-04.jpg" alt=""></a>
+                <span class="category">Assassin</span>
+                <h4><a href="property-details.html">Fanny</a></h4>
+                <ul>
+                  <li>Lane: <span>Jungler</span></li>
+                  <li>tipe: <span>Burst Damage</span></li>
+                  <li>atk tipe: <span>Physical/Melee</span></li>
+
+                </ul>
+                <div class="main-button">
+                  <a href="#">Vote</a>
+                </div>
+              </div>
+        </div> --}}
+{{--
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 str">
+          <div class="item">
+            <a href="property-details.html"><img src="assets/images/property-05.jpg" alt=""></a>
+            <span class="category">Mage</span>
+            <h4><a href="property-details.html">Kagura</a></h4>
+            <ul>
+              <li>Lane: <span> Mid lane</span></li>
+              <li>tipe: <span>Damage reap</span></li>
+              <li>atk tipe: <span>Magic/range</span></li>
+
+            </ul>
+            <div class="main-button">
+                <a href="#">Vote</a>
+              </div>
           </div>
         </div>
-        <div class="col-lg-12">
-          <div class="tabs-content">
-            <div class="row">
-              <div class="nav-wrapper">
-                <ul class="nav nav-tabs" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="penthouse-tab" data-bs-toggle="tab" data-bs-target="#penthouse" type="button" role="tab" aria-controls="penthouse" aria-selected="false">Fighter</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="appartment-tab" data-bs-toggle="tab" data-bs-target="#appartment" type="button" role="tab" aria-controls="appartment" aria-selected="true">Asassin</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="villa-tab" data-bs-toggle="tab" data-bs-target="#villa" type="button" role="tab" aria-controls="villa" aria-selected="false">Mage</button>
-                  </li>
-                </ul>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 rac">
+          <div class="item">
+            <a href="property-details.html"><img src="assets/images/property-13.png" alt=""></a>
+            <span class="category">Fighter</span>
+            <h4><a href="property-details.html">Yu Zhong</a></h4>
+            <ul>
+              <li>Lane: <span>Exp Lane</span></li>
+              <li>tipe: <span>Initiator/regen</span></li>
+              <li>atk tipe: <span>physical/melee</span></li>
+
+            </ul>
+            <div class="main-button">
+                <a href="#">Vote</a>
               </div>
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade" id="penthouse" role="tabpanel" aria-labelledby="penthouse-tab">
-                  <div class="row">
-                    <div class="col-lg-7">
-                      <img src="assets/images/deal-03.png" alt="">
-                    </div>
-                    <div class="col-lg-5">
-                      <h4>Extra Info About Hero</h4>
-                      <p>Hero Yu Zhong Mobile Legends adalah seorang Hero petarung dengan tiga wujud.
-                        Yu Zhong memiliki julukan sang Naga Hitam
-                        karena kemampuan ultimate-nya yang memungkinkan Yu Zhong berubah menjadi naga hitam besar.
-                        Saat berubah menjadi naga hitam besar,
-                        Yu Zhong memiliki kekebalan untuk mengendalikan massa dan kemampuannya bertambah untuk memukul mundur musuh yang ada.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade show active" id="appartment" role="tabpanel" aria-labelledby="appartment-tab">
-                  <div class="row">
-                    <div class="col-lg-7">
-                      <img src="assets/images/deal-01.jpg" alt="">
-                    </div>
-                    <div class="col-lg-5">
-                      <h4>Extra Info About Hero</h4>
-                      <p>Ling merupakan salah satu hero Assassin di Mobile Legends yang cukup populer dan masih
-                        sering digunakan hingga saat ini. Alasan mengapa Ling menjadi populer adalah karena ia
-                        memiliki kemampuan yang terbilang sempurna untuk Assassin — lincah dan memiliki damage tinggi.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="villa" role="tabpanel" aria-labelledby="villa-tab">
-                  <div class="row">
-                    <div class="col-lg-7">
-                      <img src="assets/images/deal-02.png" alt="">
-                    </div>
-                    <div class="col-lg-5">
-                      <h4>Extra Info About Hero</h4>
-                      <p>Yve merupakan hero Mage yang mampu menghasilkan damage yang sangat besar,
-                        serta bisa menghasilkan crowd control yang sangat mengganggu lawan satu lane-nya,
-                        Hero Mage seperti Yve memang dibuat unggul ketika team fight tiba karena selain bisa menghasilkan Magic Damage yang besar,
-                        Real World Manipulation milik Yve juga bisa memberikan pressure terhadap musuh yang membuat musuh bakal ketakutan saat Yve mengaktifkan ultimate-nya.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 str">
+          <div class="item">
+            <a href="property-details.html"><img src="assets/images/property-06.jpg" alt=""></a>
+            <span class="category">Mage</span>
+            <h4><a href="property-details.html">Lunox</a></h4>
+            <ul>
+              <li>Lane: <span>Mid Lane</span></li>
+              <li>tipe: <span>Damage reap/poke</span></li>
+              <li>atk tipe: <span>Magic/range</span></li>
+
+            </ul>
+            <div class="main-button">
+                <a href="#">Vote</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 str">
+          <div class="item">
+            <a href="property-details.html"><img src="assets/images/property-07.png" alt=""></a>
+            <span class="category">Mage</span>
+            <h4><a href="property-details.html">Pharsa</a></h4>
+            <ul>
+              <li>Lane: <span>Mid Lane</span></li>
+              <li>tipe: <span>Burst Damage/Poke</span></li>
+              <li>atk tipe: <span>Magic/Range</span></li>
+
+            </ul>
+            <div class="main-button">
+                <a href="#">Vote</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
+          <div class="item">
+            <a href="property-details.html"><img src="assets/images/property-02.jpg" alt=""></a>
+            <span class="category">Assassin</span>
+            <h4><a href="property-details.html">Lancelot</a></h4>
+            <ul>
+              <li>Lane: <span>Jungler</span></li>
+              <li>tipe: <span>Burst Damage</span></li>
+              <li>atk tipe: <span>Physical/Melee</span></li>
+
+            </ul>
+            <div class="main-button">
+                <a href="#">Vote</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 str">
+          <div class="item">
+            <a href="property-details.html"><img src="assets/images/property-08.png" alt=""></a>
+            <span class="category">Mage</span>
+            <h4><a href="property-details.html">Yve</a></h4>
+            <ul>
+              <li>Lane: <span>Mid Lane</span></li>
+              <li>tipe: <span>Poke</span></li>
+              <li>atk tipe: <span>Magic/Range</span></li>
+
+            </ul>
+            <div class="main-button">
+                <a href="#">Vote</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
+          <div class="item">
+            <a href="property-details.html"><img src="assets/images/property-03.jpg" alt=""></a>
+            <span class="category">Assassin</span>
+            <h4><a href="property-details.html">Ling</a></h4>
+            <ul>
+              <li>Lane: <span>Jungler</span></li>
+              <li>tipe: <span>Burst Damage</span></li>
+              <li>atk tipe: <span>Physical/Melee</span></li>
+
+            </ul>
+            <div class="main-button">
+                <a href="#">Vote</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 rac">
+            <div class="item">
+              <a href="property-details.html"><img src="assets/images/property-14.jpg" alt=""></a>
+              <span class="category">Fighter</span>
+              <h4><a href="property-details.html">Zilong</a></h4>
+              <ul>
+                <li>Lane: <span>Jungler/Exp Lane</span></li>
+                <li>tipe: <span>Burst Damage</span></li>
+                <li>atk tipe: <span>Physical/Melee</span></li>
+
+              </ul>
+              <div class="main-button">
+                <a href="#">Vote</a>
               </div>
             </div>
           </div>
+          <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 rac">
+            <div class="item">
+              <a href="property-details.html"><img src="assets/images/property-12.png" alt=""></a>
+              <span class="category">Fighter</span>
+              <h4><a href="property-details.html">Dyrroth</a></h4>
+              <ul>
+                <li>Lane: <span>Jungler/Exp Lane</span></li>
+                <li>tipe: <span>Burst Damage</span></li>
+                <li>atk tipe: <span>Physical/Melee</span></li>
+
+              </ul>
+                <div class="main-button">
+                    <form action="{{ route('vote.character', ['character' => 'Dyrroth']) }}" method="POST" onsubmit="return confirmVote()">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Vote</button>
+                    </form>
+                </div>
+            </div>
         </div>
       </div>
-    </div>
+
+    </div> --}}
   </div>
 
   <footer>
@@ -199,5 +321,11 @@
   <script src="{{asset('assets/js/owl-carousel.js')}}"></script>
   <script src="{{asset('assets/js/counter.js')}}"></script>
   <script src="{{asset('assets/js/custom.js')}}"></script>
-</html>
+  <script>
+    function confirmVote() {
+        return confirm('Apakah Anda akan memilih hero ini?');
+    }
+</script>
 
+  </body>
+</html>

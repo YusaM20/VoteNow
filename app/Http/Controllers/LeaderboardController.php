@@ -9,6 +9,7 @@ use App\Models\Hero;
 use App\Models\HeroRole;
 use App\Models\Vote;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class LeaderboardController extends Controller
 {
@@ -22,5 +23,11 @@ class LeaderboardController extends Controller
             ->get();
 
         return view('layouts.main.leaderboard', compact('votes'));
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/user/login')->with('success', 'Logged out successfully!');
     }
 }
