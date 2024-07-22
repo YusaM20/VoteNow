@@ -22,6 +22,112 @@
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
+    <style>
+        .header-area .main-nav ul.nav {
+            flex-basis: 100%;
+            margin-top: 30px;
+            justify-content: right;
+            -webkit-transition: all 0.3s ease 0s;
+            -moz-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+            position: relative;
+            z-index: 999;
+        }
+
+        .header-area .main-nav .nav li:last-child {
+            padding-right: 0px;
+        }
+
+        .header-area .main-nav .nav li {
+            padding-left: 10px;
+            padding-right: 10px;
+            height: 100px;
+            line-height: 100px;
+        }
+
+        .header-area .main-nav .nav li a {
+            display: block;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-weight: 500;
+            font-size: 15px;
+            height: 40px;
+            line-height: 40px;
+            text-transform: capitalize;
+            color: #1e1e1e;
+            -webkit-transition: all 0.4s ease 0s;
+            -moz-transition: all 0.4s ease 0s;
+            -o-transition: all 0.4s ease 0s;
+            transition: all 0.4s ease 0s;
+            border: transparent;
+            letter-spacing: .25px;
+        }
+
+        .header-area .main-nav .nav li:last-child a {
+            background-color: #fff;
+            color: black;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: none;
+            border-radius: 20px;
+            padding-left: 0px;
+        }
+
+        .header-area .main-nav .nav li:last-child a i {
+            background-color: #f35525;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+            margin-left: -1px;
+        }
+
+        .header-area .main-nav .nav li:last-child:hover a {
+            background-color: white;
+        }
+
+        .header-area .main-nav .nav li:last-child:hover a i {
+            color: #fff;
+        }
+
+        .header-area .main-nav .nav li:hover a {
+            color: #f35525;
+        }
+
+        .header-area .main-nav .nav li a.active {
+            color: #f35525;
+        }
+
+
+        .background-header .main-nav .nav li a.active {
+            color: #f35525;
+        }
+
+        .header-area .main-nav .menu-trigger {
+            cursor: pointer;
+            position: absolute;
+            top: 23px;
+            width: 32px;
+            height: 40px;
+            text-indent: -9999em;
+            z-index: 99;
+            right: 20px;
+            display: none;
+        }
+
+        .background-header .main-nav .menu-trigger {
+            top: 22px;
+        }
+
+        .background-header .main-nav ul.nav {
+            margin-top: 20px;
+        }
+    </style>
+
 
 <body>
     <div id="js-preloader" class="js-preloader">
@@ -52,21 +158,7 @@
                             <li><a href="#" id="kategoriNav">Kategori</a></li>
                             <li><a href="{{ route('vote.page') }}">Vote</a></li>
                             <li><a href="{{ route('lead.page') }}">Leaderboard</a></li>
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="fa fa-calendar"></i>
-                                    Logout
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
-                            </li>
                         </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
                         <!-- ***** Menu End ***** -->
                     </nav>
                 </div>

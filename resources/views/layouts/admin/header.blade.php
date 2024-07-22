@@ -1,4 +1,4 @@
- <header class="app-header">
+<header class="app-header">
     <nav class="navbar navbar-expand-lg navbar-light">
         <ul class="navbar-nav">
             <li class="nav-item d-block d-xl-none">
@@ -6,6 +6,9 @@
                     <i class="ti ti-menu-2"></i>
                 </a>
             </li>
+            <a href="./dashboard" class="text-nowrap logo-img">
+                <img src="../aset/images/logos/horizontal_logo.png" alt="" class="mt-3">
+            </a>
             <li class="nav-item">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)">
                     <i class="ti ti-bell-ringing"></i>
@@ -23,30 +26,23 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                         <div class="message-body">
-                            </form>
                             <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
                                 <i class="ti ti-user fs-6"></i>
                                 <p class="mb-0 fs-3">My Profile
                                     @if (Auth::check())
                                         {{ Auth::user()->name }}
-                                </p>
-                            @else
-                                Guest
-                                @endif
+                                    @else
+                                        Guest
+                                    @endif
                                 </p>
                             </a>
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
-
+                                class="btn btn-outline-primary mx-3 mt-2 d-block">Logout
+                            </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                            {{-- <a href="/user/logout"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
-
-                            <form id="logout-form" action="/user/logout" method="POST" style="display: none;"> --}}
                         </div>
                     </div>
                 </li>

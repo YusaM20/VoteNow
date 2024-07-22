@@ -2,9 +2,6 @@
     <!-- Sidebar scroll-->
     <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-            <a href="./dashboard" class="text-nowrap logo-img">
-                <img src="../aset/images/logos/votenow-logo-nyamping.png" alt="" class="mt-3">
-            </a>
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                 <i class="ti ti-x fs-8"></i>
             </div>

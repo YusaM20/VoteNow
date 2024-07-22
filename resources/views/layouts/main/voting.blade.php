@@ -11,14 +11,14 @@
     <title>VoteNow</title>
     <link rel="icon" href="{{ asset('assets/images/judul.png') }}" type="image/png">
 
-    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/templatemo-villa-agency.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/templatemo-villa-agency.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!--
 
 TemplateMo 591 villa agency
 
@@ -45,55 +45,55 @@ https://templatemo.com/tm-591-villa-agency
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <nav class="main-nav">
-                <!-- ***** Logo Start ***** -->
-                <a href="index.html" class="logo">
-                  <h1>VoteNow</h1>
-                </a>
-                <!-- ***** Logo End ***** -->
-                <!-- ***** Menu Start ***** -->
-                <ul class="nav">
-                  <li><a href="{{ route('home') }}" id="homeNav">Home</a></li>
-                  <li><a href="#" id="kategoriNav">Kategori</a></li>
-                  <li><a href="property-details.html">Vote</a></li>
-                  <li><a href="{{ route('lead.page') }}">Leaderboard</a></li>
-                  <li>
-                    <a href="{{ route('logout') }}"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fa fa-calendar"></i>
-                        Logout
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                        style="display: none;">
-                        @csrf
-                    </form>
-                </li>
-                </ul>
-                <a class='menu-trigger'>
-                  <span>Menu</span>
-                </a>
-                <!-- ***** Menu End ***** -->
-              </nav>
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            <h1>VoteNow</h1>
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="{{ route('home') }}" id="homeNav">Home</a></li>
+                            <li><a href="#" id="kategoriNav">Kategori</a></li>
+                            <li><a href="property-details.html">Vote</a></li>
+                            <li><a href="{{ route('lead.page') }}">Leaderboard</a></li>
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="fa fa-calendar"></i>
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
             </div>
-          </div>
         </div>
-      </header>
+    </header>
     <!-- ***** Header Area End ***** -->
 
     <div class="page-heading header-text" id="best-deal-section">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <span class="breadcrumb"><a href="#">Home</a> / Vote</span>
-              <h3>Vote now</h3>
+            <div class="row">
+                <div class="col-lg-12">
+                    <span class="breadcrumb"><a href="#">Home</a> / Vote</span>
+                    <h3>Vote now</h3>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
-      <div class="section properties" >
+    <div class="section properties">
         <div class="container">
             <ul class="properties-filter">
                 <li>
@@ -146,48 +146,48 @@ https://templatemo.com/tm-591-villa-agency
         </div>
     </div>
 
-        <footer>
-            <div class="container">
-              <div class="col-lg-5">
+    <footer>
+        <div class="container">
+            <div class="col-lg-5">
                 <p>Copyright © 2024 VoteNow.</p>
-              </div>
             </div>
-          </footer>
+        </div>
+    </footer>
 
-          <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-          <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-          <script src="{{asset('assets/js/isotope.min.js')}}"></script>
-          <script src="{{asset('assets/js/owl-carousel.js')}}"></script>
-          <script src="{{asset('assets/js/counter.js')}}"></script>
-          <script src="{{asset('assets/js/custom.js')}}"></script>
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('assets/js/counter.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
 
 
-          <script>
-            document.getElementById('kategoriNav').addEventListener('click', function(event) {
-                event.preventDefault();
-                document.getElementById('best-deal-section').scrollIntoView({
-                    behavior: 'smooth'
+    <script>
+        document.getElementById('kategoriNav').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('best-deal-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+    <script>
+        function confirmVote() {
+            return confirm('Apakah Anda akan memilih hero ini?');
+        }
+    </script>
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: 'Success!',
+                    text: '{{ session('success') }}',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
                 });
             });
         </script>
-
-        <script>
-            function confirmVote() {
-                return confirm('Apakah Anda akan memilih hero ini?');
-            }
-        </script>
-        @if (session('success'))
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    Swal.fire({
-                        title: 'Success!',
-                        text: '{{ session('success') }}',
-                        icon: 'success',
-                        confirmButtonText: 'OK'
-                    });
-                });
-            </script>
-        @endif
+    @endif
 </body>
 
 </html>
