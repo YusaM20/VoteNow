@@ -103,4 +103,21 @@
 
 Berikut adalah beberapa contoh tampilan dari website VoteNow:
 
-![index](public/aset/images/logos/ss/ss_1.png)
+<div align="center">
+    <img src="public/aset/images/logos/ss/ss_1.png" width="45%" alt="Contoh Tampilan 1">
+    <img src="public/aset/images/logos/ss/ss_2.png" width="45%" alt="Contoh Tampilan 2">
+</div>
+<br>
+<div align="center">
+    <img src="public/aset/images/logos/ss/ss_3.png" width="45%" alt="Contoh Tampilan 3">
+    <img src="public/aset/images/logos/ss/ss_4.png" width="45%" alt="Contoh Tampilan 4">
+</div>
+<br>
+<div align="center">
+    <img src="public/aset/images/logos/ss/ss_5.png" width="45%" alt="Contoh Tampilan 5">
+    <img src="public/aset/images/logos/ss/ss_6.png" width="45%" alt="Contoh Tampilan 6">
+</div>
+<br>
+<div align="center">
+    <img src="public/aset/images/logos/ss/ss_7.png" width="45%" alt="Contoh Tampilan 7">
+</div>
