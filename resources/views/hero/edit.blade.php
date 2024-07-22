@@ -33,6 +33,6 @@
             <label>Upload File/Image</label>
             <input type="file" class="form-control" id="image" name="image">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-dark">Submit</button>
     </form>
 @endsection

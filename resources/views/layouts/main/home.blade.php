@@ -148,7 +148,7 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
+                        <a href="#" class="logo">
                             <h1>VoteNow</h1>
                         </a>
                         <!-- ***** Logo End ***** -->

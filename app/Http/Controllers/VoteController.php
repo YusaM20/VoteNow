@@ -80,14 +80,37 @@ class VoteController extends Controller
 
     public function storeVote(Request $request)
     {
-        $value = [
+        // Validasi input
+        // Periksa apakah pengguna sudah memberikan suara
+        $existingVote = DB::table('votes')
+            ->where('user_id', $request->user_id)
+            ->first();
+
+        if ($existingVote) {
+            // Jika sudah ada, redirect kembali dengan pesan error
+            return redirect('vote')->with('error', 'Anda sudah memberikan suara.');
+        }
+
+        // Jika belum ada, simpan vote ke database
+        DB::table('votes')->insert([
             'hero_id' => $request->hero_id,
-        ];
+            'user_id' => $request->user_id,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
 
-        // dd($value);
-
-        Vote::create($value);
+        // Redirect dengan pesan sukses
         return redirect('leaderboard')->with('success', 'Vote has been recorded.');
+
+        // $value = [
+        //     'hero_id' => $request->hero_id,
+        //     'user_id' => $request->user_id
+        // ];
+
+        // // dd($value);
+
+        // Vote::create($value);
+        // return redirect('leaderboard')->with('success', 'Vote has been recorded.');
     }
 
     public function logout()

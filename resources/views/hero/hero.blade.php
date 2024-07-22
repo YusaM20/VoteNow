@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="m-3">
-        <a href="/hero/create" class="btn btn-success">Tambah Hero</a>
+        <a href="/hero/create" class="btn btn-dark">Tambah Hero</a>
     </div>
     <table class="table table-striped">
         <thead>

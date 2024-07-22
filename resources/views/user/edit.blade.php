@@ -20,7 +20,7 @@
                 <input type="password" name="password" class="form-control">
                 <small>Leave blank to keep current password</small>
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-dark">Update</button>
         </form>
     </div>
 @endsection

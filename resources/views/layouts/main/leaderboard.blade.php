@@ -5,7 +5,8 @@
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
             rel="stylesheet">
 
         <title>VoteNow</title>
@@ -18,6 +19,17 @@
         <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
         <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.min.css">
+
+        <style>
+            .table img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10%;
+                display: block;
+                margin: auto;
+            }
+        </style>
     </head>
 
     <body>
@@ -36,7 +48,7 @@
                 <div class="row">
                     <div class="col-12">
                         <nav class="main-nav">
-                            <a href="index.html" class="logo">
+                            <a href="#" class="logo">
                                 <h1>VoteNow</h1>
                             </a>
                             <ul class="nav">
@@ -77,6 +89,9 @@
                                         <th class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">Rank</h6>
                                         </th>
+                                        <th class="border-bottom-0 text-center">
+                                            <h6 class="fw-semibold mb-0">Image</h6>
+                                        </th>
                                         <th class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">Role</h6>
                                         </th>
@@ -98,8 +113,11 @@
                                                 <h6 class="fw-semibold mb-0">{{ $loop->iteration }}</h6>
                                             </td>
                                             <td class="border-bottom-0">
+                                                <img class="mb-0" src="{{ $vote->image }}" alt="">
+                                            </td>
+                                            <td class="border-bottom-0">
                                                 <h6 class="fw-semibold mb-0">{{ $vote->hero_role_name }}</h6>
-                                            </td> <!-- Adjust this if needed -->
+                                            </td>
                                             <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">{{ $vote->name }}</p>
                                             </td>
@@ -160,4 +178,5 @@
             </script>
         @endif
     </body>
+
     </html>

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.min.css">
     <!--
 
 TemplateMo 591 villa agency
@@ -28,7 +29,15 @@ https://templatemo.com/tm-591-villa-agency
 </head>
 
 <body>
-
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @elseif(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
     <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">
         <div class="preloader-inner">
@@ -49,7 +58,7 @@ https://templatemo.com/tm-591-villa-agency
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
+                        <a href="#" class="logo">
                             <h1>VoteNow</h1>
                         </a>
                         <!-- ***** Logo End ***** -->
@@ -136,6 +145,7 @@ https://templatemo.com/tm-591-villa-agency
                                 <form action="/vote/store/{{ $value->hero_id }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="hero_id" value="{{ $value->hero_id }}">
+                                    <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                                     <button class="w-50 btn btn-lg btn-dark" type="submit">Vote</button>
                                 </form>
                             </div>
@@ -160,6 +170,8 @@ https://templatemo.com/tm-591-villa-agency
     <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
     <script src="{{ asset('assets/js/counter.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
+
 
 
     <script>
@@ -176,18 +188,25 @@ https://templatemo.com/tm-591-villa-agency
             return confirm('Apakah Anda akan memilih hero ini?');
         }
     </script>
-    @if (session('success'))
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @if (session('success'))
                 Swal.fire({
                     title: 'Success!',
                     text: '{{ session('success') }}',
                     icon: 'success',
                     confirmButtonText: 'OK'
                 });
-            });
-        </script>
-    @endif
+            @elseif (session('error'))
+                Swal.fire({
+                    title: 'Error!',
+                    text: '{{ session('error') }}',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            @endif
+        });
+    </script>
 </body>
 
 </html>

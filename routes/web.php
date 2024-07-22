@@ -48,7 +48,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::prefix('user')->group(function () {
-    Route::get('/register', [UserController::class, 'register']);
+    Route::get('/register', [UserController::class, 'register'])->name('register');
     Route::post('/register/store', [UserController::class, 'storeRegister']);
     Route::get('/login', [UserController::class, 'login'])->name('login');
     Route::post('/login/auth', [UserController::class, 'loginAuth']);
