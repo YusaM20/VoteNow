@@ -62,8 +62,8 @@
 
 ## Demo Proyek
 <ul>
-  <li>Github: <a href="https://github.com/YusaM20/VoteNow">(https://github.com/YusaM20/VoteNow)</a></li>
-  <li>Youtube: <a href="https://www.youtube.com/watch?v=L1E_1ja06vw">(https://www.youtube.com/watch?v=L1E_1ja06vw)</a></li>
+  <li>Github: <a href="https://github.com/YusaM20/VoteNow">https://github.com/YusaM20/VoteNow</a></li>
+  <li>Youtube: <a href="https://www.youtube.com/watch?v=L1E_1ja06vw">https://www.youtube.com/watch?v=L1E_1ja06vw</a></li>
 </ul>
 
 ## Instalasi
@@ -98,3 +98,9 @@
    php artisan serve
 
 8. Buka aplikasi di browser pada http://localhost:8000.
+
+## Contoh Tampilan Website
+
+Berikut adalah beberapa contoh tampilan dari website VoteNow:
+
+![index](public/aset/images/logos/ss/ss_1.png)
